@@ -19,7 +19,7 @@ static void getIpAddress(string* ip) {
         // Loop through linked list of interfaces
         temp_addr = interfaces;
         while (temp_addr != NULL) {
-            if (temp_addr->ifa_addr->sa_family == AF_INET && strcmp(temp_addr->ifa_name, "en0")) {
+            if (temp_addr->ifa_addr->sa_family == AF_INET && strcmp(temp_addr->ifa_name, "eth")) {
                 *ip = inet_ntoa(((struct sockaddr_in*)temp_addr->ifa_addr)->sin_addr);
             }
             temp_addr = temp_addr->ifa_next;
