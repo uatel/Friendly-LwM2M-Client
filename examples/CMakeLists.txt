@@ -68,7 +68,7 @@ if(is_defined)
         message(STATUS "libcoap built successfully. Library path: ${libcoap_path}")
     endif()
     # Add libcoap to the project
-    target_link_libraries(WppExample ${libcoap_path}/libcoap-3.so CURL::libcurl OpenSSL::SSL OpenSSL::Crypto)
+    target_link_libraries(WppExample ${libcoap_path}/libcoap-3.a CURL::libcurl OpenSSL::SSL OpenSSL::Crypto)
     # Add FirmwareUpdater to the project
     add_subdirectory(FirmwareUpdater)
 endif()
